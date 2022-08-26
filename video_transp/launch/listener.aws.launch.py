@@ -2,8 +2,8 @@ from launch_ros.actions import Node
 import fogros2
 
 class myCloudInstance(fogros2.AWSCloudInstance):
-    def __init__(self):
-        super().__init__(self)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
     def pip_install_interface(self):
         print("installing opencv")
