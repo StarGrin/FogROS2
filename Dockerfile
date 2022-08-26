@@ -41,7 +41,7 @@ RUN unzip awscliv2.zip && rm awscliv2.zip
 RUN ./aws/install
 
 # Install python deps
-RUN python3 -m pip install --no-cache-dir -U boto3 paramiko scp wgconfig
+RUN python3 -m pip install --no-cache-dir -U boto3 paramiko scp wgconfig -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Create FogROS2 worspace and build it
 ENV ROS_WS=/home/root/fog_ws
