@@ -117,9 +117,21 @@ class AWSCloudInstance(CloudInstance):
         self.install_ros()
         self.install_colcon()
         self.install_cloud_dependencies()
+        self.pip_install_interface()
+        self.apt_install_interface()
+        self.os_cmd_interface()
         self.push_ros_workspace()
         self.info(flush_to_disk=True)
         self._is_created = True
+
+    def pip_install_interface(self):
+        pass
+
+    def apt_install_interface(self):
+        pass
+    
+    def os_cmd_interface(self):
+        pass
 
     def info(self, flush_to_disk=True):
         info_dict = super().info(flush_to_disk)
