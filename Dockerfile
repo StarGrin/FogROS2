@@ -43,6 +43,9 @@ RUN ./aws/install
 # Install python deps
 RUN python3 -m pip install --no-cache-dir -U boto3 paramiko scp wgconfig -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+# install opencv to open captures
+RUN python3 -m pip install --no-cache-dir -U opencv-python-headless -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 # Create FogROS2 worspace and build it
 ENV ROS_WS=/home/root/fog_ws
 RUN mkdir -p ${ROS_WS}/src
